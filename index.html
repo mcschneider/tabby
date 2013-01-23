@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Tabby - Lightweight, mobile-first toggle tabs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="tabby.css" type="text/css" />
+
+    <!-- HTML5 Shim for IE -->
+    <!--[if IE]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+	<section style="margin-bottom: 51px;">
+	    <article class="container">
+	        <h1><i class="icon-logo"></i> Tabby</h1>
+	        <p class="text-big">Lightweight, mobile-first toggle tabs.</p>
+
+	        <div class="row">
+	            <div class="grid-4 offset-1">
+            	        <p>A small JavaScript and CSS kit that's style-light so you can easily incorporate toggle tabs into your responsive web design.</p>
+        	        </div>
+	        </div>
+
+	        <p><a class="btn btn-blue" href="https://github.com/cferdinandi/tabby"><i class="icon-github"></i> Download on GitHub</a></p>
+
+	        <p class="text-small text-muted">Or keep reading to learn more...</p>
+
+	        <hr>
+
+	        <h2>Basic Tabs</h2>
+
+	        <p>These use basic, inline hyperlinks.</p>
+
+	        <p class="text-small">Tabby matches the <code>href</code> value on each link to the id of the matching <code>.tabs-pane</code> content. Add the <code>.active</code> class to the tab content you want to display by default.</p>
+
+            <div class="tabs">
+                <a href="#tab1">Superheroes</a> | 
+                <a href="#tab2">Ice Cream</a> | 
+                <a href="#tab3">Seasons</a>
+            </div>
+
+            <div class="tabs-content">
+                <div class="tabs-pane active" id="tab1">
+                    <p><strong>Superheros</strong></p>
+                    <p>Spiderman, Batman, or Iron Man... which one is your favorite?</p>
+                </div>
+
+                <div class="tabs-pane" id="tab2">
+                    <p><strong>Ice Cream</strong></p>
+                    <p>Chocolate, vanilla or strawberry?</p>
+                </div>
+
+                <div class="tabs-pane" id="tab3">
+                    <p><strong>Seasons</strong></p>
+                    <p>Winter, summer, spring or fall?</p>
+                </div>
+            </div>
+
+
+            <h3>The HTML</h3>
+
+            <pre>&lt;div class="tabs"&gt;
+    &lt;a href="#tab1"&gt;Superheroes&lt;/a&gt; | &lt;a href="#tab2"&gt;Ice Cream&lt;/a&gt; | &lt;a href="#tab3"&gt;Seasons&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div class="tabs-content"&gt;
+    &lt;div class="tabs-pane active" id="tab1"&gt;
+        Superheros
+        ...
+    &lt;/div&gt;
+
+    &lt;div class="tabs-pane" id="tab2"&gt;
+        Ice Cream
+        ...
+    &lt;/div&gt;
+
+    &lt;div class="tabs-pane" id="tab3"&gt;
+        Seasons
+        ...
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+
+            <hr>
+
+
+            <h2>Horizontal Tabs</h2>
+
+            <p>Styled navigation that displays horizontally.</p>
+
+            <p class="text-small">Add the <code>.active</code> class to the current <code>&lt;li&gt;</code> in the navigation to apply special styling.</p>
+
+            <ul class="tabs tabs-horizontal">
+                <li class="active"><a href="#tabA">Superheroes</a></li>
+                <li><a href="#tabB">Ice Cream</a></li>
+                <li><a href="#tabC">Seasons</a></li>
+            </ul>
+
+            <div class="tabs-content">
+                <div class="tabs-pane active" id="tabA">
+                    <p><strong>Superheros</strong></p>
+                    <p>Spiderman, Batman, or Iron Man... which one is your favorite?</p>
+                </div>
+
+                <div class="tabs-pane" id="tabB">
+                    <p><strong>Ice Cream</strong></p>
+                    <p>Chocolate, vanilla or strawberry?</p>
+                </div>
+
+                <div class="tabs-pane" id="tabC">
+                    <p><strong>Seasons</strong></p>
+                    <p>Winter, summer, spring or fall?</p>
+                </div>
+            </div>
+
+
+            <h3>The HTML</h3>
+
+            <pre>&lt;ul class="tabs tabs-horizontal"&gt;
+    &lt;a class="active" href="#tab1"&gt;Superheroes&lt;/a&gt;
+    &lt;a href="#tab2"&gt;Ice Cream&lt;/a&gt;
+    &lt;a href="#tab3"&gt;Seasons&lt;/a&gt;
+&lt;/ul&gt;
+
+&lt;div class="tabs-content"&gt;
+    &lt;div class="tabs-pane active" id="tab1"&gt;
+        Superheros
+        ...
+    &lt;/div&gt;
+
+    &lt;div class="tabs-pane" id="tab2"&gt;
+        Ice Cream
+        ...
+    &lt;/div&gt;
+
+    &lt;div class="tabs-pane" id="tab3"&gt;
+        Seasons
+        ...
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+
+            <hr>
+
+
+            <h2>Stacked Navigation</h2>
+
+            <p>On smaller screens, stacked tabs mimic the appearance of horizontal tabs. On bigger screens, navigation appears in a vertical stack next to the content.</p>
+
+            <p class="text-small">This demo uses <a href="http://cferdinandi.github.com/origami/">Origami</a>, a fluid, mobile-first grid system, to align the navigation. Feel free to use whatever grid you prefer.</p>
+
+            <div class="row text-left-desktop">
+                <div class="grid-2">
+                    <ul class="tabs tabs-stacked">
+                        <li class="active"><a href="#tabHero">Superheroes</a></li>
+                        <li><a href="#tabIC">Ice Cream</a></li>
+                        <li><a href="#tabSeasons">Seasons</a></li>
+                    </ul>
+                </div>
+                <div class="grid-4">
+                    <div class="tabs-content">
+                        <div class="tabs-pane active" id="tabHero">
+                            <p><strong>Superheros</strong></p>
+                            <p>Spiderman, Batman, or Iron Man... which one is your favorite?</p>
+                        </div>
+
+                        <div class="tabs-pane" id="tabIC">
+                            <p><strong>Ice Cream</strong></p>
+                            <p>Chocolate, vanilla or strawberry?</p>
+                        </div>
+
+                        <div class="tabs-pane" id="tabSeasons">
+                            <p><strong>Seasons</strong></p>
+                            <p>Winter, summer, spring or fall?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <h3>The HTML</h3>
+
+            <pre>&lt;div class="row"&gt;
+    &lt;div class="grid-2"&gt;
+        &lt;div class="tabs"&gt;
+            &lt;a class="active" href="#tab1"&gt;Superheroes&lt;/a&gt;
+            &lt;a href="#tab2"&gt;Ice Cream&lt;/a&gt;
+            &lt;a href="#tab3"&gt;Seasons&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="grid-4"&gt;
+        &lt;div class="tabs-content"&gt;
+            &lt;div class="tabs-pane active" id="tab1"&gt;
+                Superheros
+                ...
+            &lt;/div&gt;
+
+            &lt;div class="tabs-pane" id="tab2"&gt;
+                Ice Cream
+                ...
+            &lt;/div&gt;
+
+            &lt;div class="tabs-pane" id="tab3"&gt;
+                Seasons
+                ...
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+
+            <hr>
+
+
+            <h2>Progressively Enhanced</h2>
+
+            <p>By default, tab navigation is hidden and all tab content is visible.</p>
+
+            <p class="text-small">Tabby includes a small <code>accessibility-styles.js</code> snippet that adds a <code>.js</code> class to the <code>&lt;body&gt;</code> on page load. This activates Tabby, showing the tab navigation and hiding tab content.</p>
+
+            <hr>
+
+
+            <h2>Requires jQuery</h2>
+
+            <p>Tabby requires the latest version of <a href="http://jquery.com/">jQuery</a>.</p>
+
+            <p class="text-small">Obviously, you need to include <code>tabby.js</code>, too.</p>
+
+            <pre>&lt;script src="http://code.jquery.com/jquery-1.9.0.min.js"&gt;&lt;/script&gt;
+&lt;script src="tabby.js"&gt;&lt;/script&gt;</pre>
+
+        </article>
+	</section>
+
+	<footer class="bg-gray">
+        <article class="container">
+
+            <p class="text-small text-muted">Built by <a href="http://gomakethings.com">Chris Ferdinandi</a>. Licensed under <a href="http://www.wtfpl.net/">WTFPL</a>.</p>
+
+        </article>
+	</footer>
+
+
+    <!-- Javascript -->
+    <script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+    <script type='text/javascript' src='tabby.js'></script>
+
+</body>
+</html>
