@@ -5,37 +5,54 @@
     <title>Tabby - Lightweight, mobile-first toggle tabs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <!-- stylesheets -->
-    <link rel="stylesheet" href="tabby.css" type="text/css" />
+    <link rel="stylesheet" href="kraken.css" type="text/css" />
 
-    <!-- HTML5 Shim for IE -->
-    <!--[if IE]>
+    <!-- HTML5 Shim for IE 6-8 -->
+    <!--[if lt IE 9]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/ico" href="img/favicon.ico">
+
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/apple-touch-icon-144.png">
+
+    <!-- MS Homescreen Icons -->
+    <meta name="msapplication-TileColor" content="#0088cc">
+    <meta name="msapplication-TileImage" content="img/ms-touch-icon.png">
 </head>
 
 <body>
-	<section style="margin-bottom: 51px;">
-	    <article class="container">
-	        <h1><i class="icon-logo"></i> Tabby</h1>
-	        <p class="text-big">Lightweight, mobile-first toggle tabs.</p>
+	<section class="space-bottom bg-gray">
+	    <article class="container text-center">
 
 	        <div class="row">
 	            <div class="grid-4 offset-1">
-            	        <p>A small JavaScript and CSS kit that's style-light so you can easily incorporate toggle tabs into your responsive web design.</p>
+	                <h1 class="text-taller no-space-bottom"><i class="icon-logo"></i> Tabby</h1>
+	                <p class="text-tall text-muted">Lightweight, mobile-first toggle tabs.</p>
         	        </div>
 	        </div>
 
-	        <p><a class="btn btn-blue" href="https://github.com/cferdinandi/tabby"><i class="icon-github"></i> Download on GitHub</a></p>
+	        <p><a class="btn btn-blue btn-large" href="https://github.com/cferdinandi/tabby"><i class="icon-github"></i> Download on GitHub</a></p>
 
-	        <p class="text-small text-muted">Or keep reading to learn more...</p>
+	        <p class="text-muted">Or keep reading to learn more...</p>
 
-	        <hr>
+        </article>
+    </section>
 
-	        <h2>Basic Tabs</h2>
+	<section class="space-bottom">
+	    <article class="container">
+
+
+	        <h1 class="text-center">Basic Tabs</h1>
 
 	        <p>These use basic, inline hyperlinks.</p>
 
-	        <p class="text-small">Tabby matches the <code>href</code> value on each link to the id of the matching <code>.tabs-pane</code> content. Add the <code>.active</code> class to the tab content you want to display by default.</p>
+	        <p>Tabby matches the <code>href</code> value on each link to the id of the matching <code>.tabs-pane</code> content. Add the <code>.active</code> class to the tab content you want to display by default.</p>
 
             <div class="tabs">
                 <a href="#tab1">Superheroes</a> | 
@@ -59,9 +76,6 @@
                     <p>Winter, summer, spring or fall?</p>
                 </div>
             </div>
-
-
-            <h3>The HTML</h3>
 
             <pre>&lt;div class="tabs"&gt;
     &lt;a href="#tab1"&gt;Superheroes&lt;/a&gt; | &lt;a href="#tab2"&gt;Ice Cream&lt;/a&gt; | &lt;a href="#tab3"&gt;Seasons&lt;/a&gt;
@@ -87,11 +101,11 @@
             <hr>
 
 
-            <h2>Horizontal Tabs</h2>
+            <h1 class="text-center">Horizontal Tabs</h1>
 
             <p>Styled navigation that displays horizontally.</p>
 
-            <p class="text-small">Add the <code>.active</code> class to the current <code>&lt;li&gt;</code> in the navigation to apply special styling.</p>
+            <p>Add the <code>.active</code> class to the current <code>&lt;li&gt;</code> in the navigation to apply special styling.</p>
 
             <ul class="tabs tabs-horizontal">
                 <li class="active"><a href="#tabA">Superheroes</a></li>
@@ -115,9 +129,6 @@
                     <p>Winter, summer, spring or fall?</p>
                 </div>
             </div>
-
-
-            <h3>The HTML</h3>
 
             <pre>&lt;ul class="tabs tabs-horizontal"&gt;
     &lt;a class="active" href="#tab1"&gt;Superheroes&lt;/a&gt;
@@ -145,11 +156,11 @@
             <hr>
 
 
-            <h2>Stacked Navigation</h2>
+            <h1 class="text-center">Stacked Navigation</h1>
 
             <p>On smaller screens, stacked tabs mimic the appearance of horizontal tabs. On bigger screens, navigation appears in a vertical stack next to the content.</p>
 
-            <p class="text-small">This demo uses <a href="http://cferdinandi.github.com/origami/">Origami</a>, a fluid, mobile-first grid system, to align the navigation. Feel free to use whatever grid you prefer.</p>
+            <p>This demo uses <a href="http://cferdinandi.github.com/origami/">Origami</a>, a fluid, mobile-first grid system, to align the navigation. Feel free to use whatever grid you prefer.</p>
 
             <div class="row text-left-desktop">
                 <div class="grid-2">
@@ -178,9 +189,6 @@
                     </div>
                 </div>
             </div>
-
-
-            <h3>The HTML</h3>
 
             <pre>&lt;div class="row"&gt;
     &lt;div class="grid-2"&gt;
@@ -213,23 +221,18 @@
             <hr>
 
 
-            <h2>Progressively Enhanced</h2>
+            <h1 class="text-center">Progressively Enhanced</h1>
 
             <p>By default, tab navigation is hidden and all tab content is visible.</p>
 
-            <p class="text-small">Tabby includes the <a href="http://cferdinandi.github.com/js-accessibility/">JS Accessibility snippet</a>, which adds a <code>.js</code> class to the <code>&lt;body&gt;</code> on page load. This activates Tabby, showing the tab navigation and hiding tab content.</p>
+            <p>Tabby includes the <a href="http://cferdinandi.github.com/js-accessibility/">JS Accessibility snippet</a>, which adds a <code>.js</code> class to the <code>&lt;body&gt;</code> on page load. This activates Tabby, showing the tab navigation and hiding tab content.</p>
 
             <hr>
 
 
-            <h2>Requires jQuery</h2>
+            <h1 class="text-center">Requires jQuery</h1>
 
             <p>Tabby requires <a href="http://jquery.com/">jQuery</a>.</p>
-
-            <p class="text-small">Obviously, you need to include <code>tabby.js</code>, too.</p>
-
-            <pre>&lt;script src="http://code.jquery.com/jquery-1.9.0.min.js"&gt;&lt;/script&gt;
-&lt;script src="tabby.js"&gt;&lt;/script&gt;</pre>
 
         </article>
 	</section>
@@ -237,7 +240,7 @@
 	<footer class="bg-gray">
         <article class="container">
 
-            <p class="text-small text-muted">Built by <a href="http://gomakethings.com">Chris Ferdinandi</a>. Licensed under <a href="http://www.wtfpl.net/">WTFPL</a>.</p>
+            <p class="text-small text-muted text-center">Built by <a href="http://gomakethings.com">Chris Ferdinandi</a>. Licensed under <a href="http://www.wtfpl.net/">WTFPL</a>.</p>
 
         </article>
 	</footer>
@@ -245,7 +248,7 @@
 
     <!-- Javascript -->
     <script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
-    <script type='text/javascript' src='tabby.js'></script>
+    <script type='text/javascript' src='js/kraken.js'></script>
 
 </body>
 </html>
