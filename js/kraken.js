@@ -71,9 +71,10 @@
  * ============================================================= */
 
 $(function () {
-    $('.tabs a').click(function(e) {
+
+    $('.tabs a, .tabs button').click(function(e) {
         e.preventDefault(); // Prevent default link behavior.
-        var tabID = $(this).attr('href'); // Pull the href value as the tabID.
+        var tabID = $(this).attr('data-target'); // Pull the data-target value as the tabID.
 
         $(this).addClass('active').parent().addClass('active'); // Add the .active class to the link and it's parent li (if one exists).
         $(this).siblings().removeClass('active'); // Remove the .active class from sibling tab navigation elements.
@@ -81,6 +82,7 @@ $(function () {
         $(tabID).addClass('active'); // Add the .active class to the div with the tab content.
         $(tabID).siblings().removeClass('active'); // Remove the .active class from other tab content divs.
     });
+
 });
 
 
