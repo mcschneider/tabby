@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Tabby Stacked | Tabby</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="kraken.css" type="text/css">
+
+    <!-- Feature Test -->
+    <script>
+        if ( 'querySelector' in document && 'addEventListener' in window ) {
+            document.documentElement.className += 'js';
+        }
+    </script>
+
+    <!-- HTML5 Shim for IE 6-8 -->
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+	<section class="space-bottom bg-gray">
+	    <article class="container text-center">
+
+            <h1 class="text-taller no-space"><i class="icon-logo"></i> Tabby</h1>
+            <p class="space-bottom-small"><a href="index.html">&larr; Tabby Home</a></p>
+
+        </article>
+    </section>
+
+	<section class="space-bottom">
+	    <article class="container">
+
+	        <h1 class="text-center no-space-bottom">Tabby Stacked</h1>
+	        <p class="text-center text-muted">
+	            <span class="text-tall">Vertical navigation on big screens.</span><br>
+	            (And horizontal navigation on small ones.)
+            </p>
+
+            <div class="row text-left-desktop">
+                <div class="grid-2">
+                    <ul class="tabs tabs-stacked">
+                        <li class="active"><a data-target="#tabHero" href="#">Superheroes</a></li>
+                        <li><a data-target="#tabIC" href="#">Ice Cream</a></li>
+                        <li><a data-target="#tabSeasons" href="#">Seasons</a></li>
+                    </ul>
+                </div>
+                <div class="grid-4">
+                    <div class="tabs-content">
+                        <div class="tabs-pane active" id="tabHero">
+                            <p><strong>Superheros</strong></p>
+                            <p>Spiderman, Batman, or Iron Man... which one is your favorite?</p>
+                        </div>
+
+                        <div class="tabs-pane" id="tabIC">
+                            <p><strong>Ice Cream</strong></p>
+                            <p>Chocolate, vanilla or strawberry?</p>
+                        </div>
+
+                        <div class="tabs-pane" id="tabSeasons">
+                            <p><strong>Seasons</strong></p>
+                            <p>Winter, summer, spring or fall?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+
+            <h1 class="text-center">How to use Tabby Stacked</h1>
+
+            <h2>1. Include Tabby on your site.</h2>
+
+            <pre>&lt;link rel="stylesheet" href="tabby.css"&gt;
+&lt;script src="tabby.js"&gt;&lt;/script&gt;</pre>
+
+
+            <h2>2. Add the markup to your HTML.</h2>
+
+            <pre>&lt;div class="row"&gt;
+    &lt;div class="grid-2"&gt;
+        &lt;div class="tabs"&gt;
+            &lt;li class="active"&gt;&lt;a data-target="#tab1" href="#"&gt;Superheroes&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a data-target="#tab2" href="#"&gt;Ice Cream&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a data-target="#tab3" href="#"&gt;Seasons&lt;/a&gt;&lt;/li&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="grid-4"&gt;
+        &lt;div class="tabs-content"&gt;
+            &lt;div class="tabs-pane active" id="tab1"&gt;
+                Superheros
+                ...
+            &lt;/div&gt;
+
+            &lt;div class="tabs-pane" id="tab2"&gt;
+                Ice Cream
+                ...
+            &lt;/div&gt;
+
+            &lt;div class="tabs-pane" id="tab3"&gt;
+                Seasons
+                ...
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+
+            <p>Tab toggles can be buttons or links. Make sure that the <code>data-target</code> value of each tab toggle matches the ID of the matching <code>.tab-pane</code>. Add the <code>.active</code> class to the tab and content that you'd like displayed by default.</p>
+
+            <p>Tabby Stacked uses the grid from <a href="http://cferdinandi.github.io/kraken/">Kraken</a> to provide structure. Feel free to replace with your own.</p>
+
+
+            <h2>3. Add a feature test.</h2>
+
+            <p>Tabby uses modern JavaScript API's that aren't supported by older browsers. Add this short snippet of code in the <code>&lt;head&gt;</code> of your HTML document to feature test:</p>
+
+            <pre>&lt;!-- Feature Test --&gt;
+&lt;script&gt;
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+        document.documentElement.className += 'js';
+    }
+&lt;/script&gt;</pre>
+
+            <p>For browsers that support modern JavaScript API's, this snippet adds a <code>.js</code> class to the <code>&lt;html&gt;</code> element, which activates Tabby. Older and less capable browsers will be shown all tab content by default, and the navigation tabs will be hidden.</p>
+
+
+            <h2>4. Pat yourself on the back.</h2>
+
+            <p>Seriously, you're done. Nice work! Modify as needed.</p>
+
+        </article>
+	</section>
+
+	<footer class="bg-gray">
+        <article class="container">
+
+            <p class="text-small text-muted text-center">Built by <a href="http://gomakethings.com">Chris Ferdinandi</a>. Free to use under the <a href="http://gomakethings.com/mit/">MIT License</a>.</p>
+
+            <p class="text-small text-muted text-center">Tabby is an add-on for <a href="http://cferdinandi.github.com/kraken/">Kraken</a>, a lightweight, mobile-first boilerplate for front-end web developers. It works great as a standalone product, too.</p>
+
+        </article>
+	</footer>
+
+
+    <!-- Javascript -->
+    <script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+    <script type='text/javascript' src='js/kraken.js'></script>
+
+</body>
+</html>

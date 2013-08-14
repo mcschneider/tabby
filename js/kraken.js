@@ -1,101 +1,122 @@
 /* =============================================================
- * ios-orientation-change-fix.js v1.0.0
- * Fixes zoom on rotation bug in iOS.
- * Script by @scottjehl, rebound by @wilto
- * https://github.com/scottjehl/iOS-Orientationchange-Fix
- * MIT / GPLv2 License
+
+    Tabby v3.0
+    Simple, mobile-first toggle tabs by Chris Ferdinandi
+    http://gomakethings.com
+
+    Free to use under the MIT License.
+    http://gomakethings.com/mit/
+    
  * ============================================================= */
-
-(function(w){
-	
-	// This fix addresses an iOS bug, so return early if the UA claims it's something else.
-	var ua = navigator.userAgent;
-	if( !( /iPhone|iPad|iPod/.test( navigator.platform ) && /OS [1-5]_[0-9_]* like Mac OS X/i.test(ua) && ua.indexOf( "AppleWebKit" ) > -1 ) ){
-		return;
-	}
-
-    var doc = w.document;
-
-    if( !doc.querySelector ){ return; }
-
-    var meta = doc.querySelector( "meta[name=viewport]" ),
-        initialContent = meta && meta.getAttribute( "content" ),
-        disabledZoom = initialContent + ",maximum-scale=1",
-        enabledZoom = initialContent + ",maximum-scale=10",
-        enabled = true,
-		x, y, z, aig;
-
-    if( !meta ){ return; }
-
-    function restoreZoom(){
-        meta.setAttribute( "content", enabledZoom );
-        enabled = true;
-    }
-
-    function disableZoom(){
-        meta.setAttribute( "content", disabledZoom );
-        enabled = false;
-    }
-	
-    function checkTilt( e ){
-		aig = e.accelerationIncludingGravity;
-		x = Math.abs( aig.x );
-		y = Math.abs( aig.y );
-		z = Math.abs( aig.z );
-				
-		// If portrait orientation and in one of the danger zones
-        if( (!w.orientation || w.orientation === 180) && ( x > 7 || ( ( z > 6 && y < 8 || z < 8 && y > 6 ) && x > 5 ) ) ){
-			if( enabled ){
-				disableZoom();
-			}        	
-        }
-		else if( !enabled ){
-			restoreZoom();
-        }
-    }
-	
-	w.addEventListener( "orientationchange", restoreZoom, false );
-	w.addEventListener( "devicemotion", checkTilt, false );
-
-})( this );
-
-
-
 
 
 /* =============================================================
- * tabby.js v1.0
- * Simple, mobile-first toggle tabs.
- * Script by Chris Ferdinandi - http://gomakethings.com
- * Licensed under WTFPL - http://www.wtfpl.net
+    MICRO-FRAMEWORK
+    Simple vanilla JavaScript functions to handle common tasks.
  * ============================================================= */
 
-$(function () {
+// Check if an element has a class
+var hasClass = function (elem, className) {
+    return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
+}
 
-    $('.tabs a, .tabs button').click(function(e) {
-        e.preventDefault(); // Prevent default link behavior.
-        var tabID = $(this).attr('data-target'); // Pull the data-target value as the tabID.
+// Add a class to an element
+var addClass = function (elem, className) {
+    if (!hasClass(elem, className)) {
+        elem.className += ' ' + className;
+    }
+}
 
-        $(this).addClass('active').parent().addClass('active'); // Add the .active class to the link and it's parent li (if one exists).
-        $(this).siblings().removeClass('active'); // Remove the .active class from sibling tab navigation elements.
-        $(this).parent('li').siblings().removeClass('active').children().removeClass('active'); // Remove the .active class from sibling li elements and their links.
-        $(tabID).addClass('active'); // Add the .active class to the div with the tab content.
-        $(tabID).siblings().removeClass('active'); // Remove the .active class from other tab content divs.
+// Remove a class from an element
+var removeClass = function (elem, className) {
+    var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, ' ') + ' ';
+    if (hasClass(elem, className)) {
+        while (newClass.indexOf(' ' + className + ' ') >= 0 ) {
+            newClass = newClass.replace(' ' + className + ' ', ' ');
+        }
+        elem.className = newClass.replace(/^\s+|\s+$/g, '');
+    }
+}
+
+// Toggle a class on an element
+var toggleClass = function (elem, className) {
+    if ( hasClass(elem, className) ) {
+        removeClass(elem, className);
+    }
+    else {
+        addClass(elem, className);
+    }
+}
+
+// Return sibling elements
+var getSiblings = function (elem) {
+    var siblings = [];
+    var sibling = elem.parentNode.firstChild;
+    var skipMe = elem;
+    for ( ; sibling; sibling = sibling.nextSibling ) 
+       if ( sibling.nodeType == 1 && sibling != elem )
+          siblings.push( sibling );        
+    return siblings;
+}
+
+
+/* =============================================================
+    TABBY FUNCTIONS
+    Control the toggle tabs.
+ * ============================================================= */
+
+// Function to show a tab
+var showTab = function (toggle) {
+
+    // Define the target tab and siblings
+    var dataID = toggle.getAttribute('data-target');
+    var dataTarget = document.querySelector(dataID);
+    var targetSiblings = getSiblings(dataTarget);
+
+    // Get toggle parent and parent sibling elements
+    var toggleParent = toggle.parentNode;
+    var toggleSiblings = getSiblings(toggleParent);
+
+    // Add '.active' class to tab toggle and parent element
+    addClass(toggle, 'active');
+    addClass(toggleParent, 'active');
+
+    // Remove '.active' class from all sibling elements
+    [].forEach.call(toggleSiblings, function (sibling) {
+        removeClass(sibling, 'active');
     });
 
-});
+    // Add '.active' class to target tab
+    addClass(dataTarget, 'active');
+
+    // Remove '.active' class from all other tabs
+    [].forEach.call(targetSiblings, function (sibling) {
+        removeClass(sibling, 'active');
+    });
+
+}
 
 
+// Feature Test
+if ( 'querySelector' in document && 'addEventListener' in window ) {
 
+    // Define tab toggles
+    var tabToggle = document.querySelectorAll('.tabs a, .tabs button');
 
+    // For each tab toggle
+    [].forEach.call(tabToggle, function (toggle) {
 
-/* =============================================================
- * accessibility-styles.js v1.0.0
- * Adds .js class to <body> for progressive enhancement.
- * Script by Chris Ferdinandi - http://gomakethings.com
- * Licensed under WTFPL - http://www.wtfpl.net
- * ============================================================= */
+        // When tab toggle is clicked
+        toggle.addEventListener('click', function(e) {
+         
+            // Prevent default link behavior
+            e.preventDefault();
 
-$(function () {
-    $('body').addClass('js'); // On page load, add the .js class to the <body> element.
-});
+            // Activate the tab
+            showTab(toggle);
+         
+        }, false);
+
+    });
+
+}
