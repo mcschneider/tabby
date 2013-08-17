@@ -10,7 +10,7 @@
 
     <!-- Feature Test -->
     <script>
-        if ( 'querySelector' in document && 'addEventListener' in window ) {
+        if ( 'querySelector' in document && 'addEventListener' in window && Array.prototype.forEach ) {
             document.documentElement.className += 'js';
         }
     </script>
@@ -105,7 +105,7 @@
 
             <pre>&lt;!-- Feature Test --&gt;
 &lt;script&gt;
-    if ( 'querySelector' in document && 'addEventListener' in window ) {
+    if ( 'querySelector' in document && 'addEventListener' in window && Array.prototype.forEach ) {
         document.documentElement.className += 'js';
     }
 &lt;/script&gt;</pre>
