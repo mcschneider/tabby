@@ -65,13 +65,20 @@
 
             <h1 class="text-center">How to use Tabby Horizontal</h1>
 
-            <h2>1. Include Tabby on your site.</h2>
+            <h2>1. Include Buoy on your site.</h2>
+
+            <pre><code class="language-markup">&lt;script src="buoy.js"&gt;&lt;/script&gt;</code></pre>
+
+            <p><a href="http://cferdinandi.github.io/buoy/">Buoy</a> is a vanilla JS micro-library that contains simple helper functions used by Tabby. Make sure to include it <em>before</em> Tabby.</p>
+            
+
+            <h2>2. Include Tabby on your site.</h2>
 
             <pre><code class="language-markup">&lt;link rel="stylesheet" href="tabby.css"&gt;
 &lt;script src="tabby.js"&gt;&lt;/script&gt;</code></pre>
 
 
-            <h2>2. Add the markup to your HTML.</h2>
+            <h2>3. Add the markup to your HTML.</h2>
 
             <pre><code class="language-markup">&lt;ul class="tabs tabs-horizontal"&gt;
     &lt;li class="active"&gt;&lt;a data-target="#tab1" href="#"&gt;Superheroes&lt;/a&gt;&lt;/li&gt;
@@ -99,7 +106,7 @@
             <p>Tab toggles can be buttons or links. Make sure that the <code>data-target</code> value of each tab toggle matches the ID of the matching <code>.tab-pane</code>. Add the <code>.active</code> class to the tab and content that you'd like displayed by default.</p>
 
 
-            <h2>3. Add a feature test.</h2>
+            <h2>4. Add a feature test.</h2>
 
             <p>Tabby uses modern JavaScript API's that aren't supported by older browsers. Add this short snippet of code in the <code>&lt;head&gt;</code> of your HTML document to feature test:</p>
 
@@ -113,7 +120,7 @@
             <p>For browsers that support modern JavaScript API's, this snippet adds a <code>.js</code> class to the <code>&lt;html&gt;</code> element, which activates Tabby. Older and less capable browsers will be shown all tab content by default, and the navigation tabs will be hidden.</p>
 
 
-            <h2>4. Pat yourself on the back.</h2>
+            <h2>5. Pat yourself on the back.</h2>
 
             <p>Seriously, you're done. Nice work! Modify as needed.</p>
 
