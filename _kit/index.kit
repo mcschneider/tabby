@@ -145,21 +145,7 @@
 &lt;/div&gt;</code></pre>
 
 
-		            <h2 class="text-left">4. Add a feature test.</h2>
-
-		            <p>Tabby uses modern JavaScript API's that aren't supported by older browsers. Add this short snippet of code in the <code>&lt;head&gt;</code> of your HTML document to feature test:</p>
-
-<pre><code class="language-markup">&lt;!-- Feature Test --&gt;
-&lt;script&gt;
-	if ( 'querySelector' in document && 'addEventListener' in window && Array.prototype.forEach ) {
-		document.documentElement.className += ' js';
-	}
-&lt;/script&gt;</code></pre>
-
-            		<p>For browsers that support modern JavaScript API's, this snippet adds a <code>.js</code> class to the <code>&lt;html&gt;</code> element, which activates Tabby. Older and less capable browsers will be shown all tab content by default, and the navigation tabs will be hidden.</p>
-
-
-					<h2 class="text-left">5. Pat yourself on the back.</h2>
+					<h2 class="text-left">4. Pat yourself on the back.</h2>
 
 					<p>Seriously, you're done. Nice work! Modify as needed.</p>
 
@@ -203,7 +189,7 @@
 
 					<p>Tabby works in all modern browsers, and IE 9 and above.</p>
 
-					<p>If you need to support older browsers, you can still download the <a href="https://github.com/cferdinandi/tabby/tree/archive-v2">jQuery version of Tabby on GitHub</a>.</p>
+					<p>Tabby is built with modern JavaScript APIs, and uses progressive enhancement. If the JavaScript file fails to load, or if your site is viewed on older and less capable browsers, all content will be displayed by default. If you need to support older browsers, you can still download the <a href="https://github.com/cferdinandi/tabby/tree/archive-v2">jQuery version of Tabby on GitHub</a>.</p>
 
 				</div>
 			</div>

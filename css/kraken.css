@@ -1066,7 +1066,7 @@ tbody tr:nth-child(even) {
 
 /* =============================================================
 
-	Tabby 4.0
+	Tabby 4.1
 	Simple, mobile-first toggle tabs by Chris Ferdinandi.
 	http://gomakethings.com
 
@@ -1081,8 +1081,8 @@ tbody tr:nth-child(even) {
 }
 
 /*  Display tab navigation if javascript enabled.
- *  This requires on the included js-accessibility.js script. */
-.js .tabs {
+ *  This requires on the included js-accessibility.js-tabby script. */
+.js-tabby .tabs {
   display: block;
   visibility: visible;
 }
@@ -1094,7 +1094,7 @@ tbody tr:nth-child(even) {
 }
 
 /*  Hide tab content if javascript is enabled. */
-.js .tabs-pane {
+.js-tabby .tabs-pane {
   display: none;
   visibility: hidden;
 }
