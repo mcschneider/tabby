@@ -29,7 +29,7 @@
 					<h1 class="text-taller no-space-bottom"><i class="icon-logo"></i> Tabby</h1>
 					<p class="text-tall text-muted">Simple toggle tabs.</p>
 
-					<p><a class="btn btn-blue btn-xlarge" href="https://github.com/cferdinandi/tabby/archive/master.zip">Download Tabby 4</a></p>
+					<p><a class="btn btn-blue btn-xlarge" href="https://github.com/cferdinandi/tabby/archive/master.zip">Download Tabby 5</a></p>
 
 					<p>
 						<span class="text-small">
@@ -54,9 +54,9 @@
 
 					<div class="tabs">
 						<p>
-							<button class="tab-toggle btn active" data-target="#tab1">Superheroes</button>
-							<button class="tab-toggle btn" data-target="#tab2">Ice Cream</button>
-							<button class="tab-toggle btn" data-target="#tab3">Seasons</button>
+							<button class="btn active" data-tab data-target="#tab1">Superheroes</button>
+							<button class="btn" data-tab data-target="#tab2">Ice Cream</button>
+							<button class="btn" data-tab data-target="#tab3">Seasons</button>
 						</p>
 					</div>
 
@@ -118,6 +118,8 @@
 
 					<p>The <code>_config.scss</code> and <code>_mixins.scss</code> files are the same ones used in <a href="http://cferdinandi.github.io/kraken/">Kraken</a>, so you can drop the <code>_tabby.css</code> file right into Kraken without making any updates. Or, adjust the variables to suit your own project.</p>
 
+					<p class="text-muted"><span class="text-small"><span class="label">Heads Up!</span> Make sure to put your JS file in the footer or Tabby won't work (it's better for performance, too).</span></p>
+
 
 					<h2 class="text-left">3. Add the markup to your HTML.</h2>
 
@@ -127,9 +129,9 @@
 
 <p class="space-bottom-small"><strong>Standalone Buttons</strong></p>
 <pre><code class="language-markup">&lt;div class="tabs"&gt;
-	&lt;button class="active" data-target="#tab1"&gt;Superheroes&lt;/button&gt;
-	&lt;button data-target="#tab2"&gt;Ice Cream&lt;/button&gt;
-	&lt;button data-target="#tab3"&gt;Seasons&lt;/button&gt;
+	&lt;button class="active" data-tab data-target="#tab1"&gt;Superheroes&lt;/button&gt;
+	&lt;button data-tab data-target="#tab2"&gt;Ice Cream&lt;/button&gt;
+	&lt;button data-tab data-target="#tab3"&gt;Seasons&lt;/button&gt;
 &lt;/div&gt;
 
 &lt;div class="tabs-content"&gt;
@@ -151,9 +153,9 @@
 
 <p class="space-bottom-small"><p class="space-bottom-small"><strong>List Links</strong></p>
 <pre><code class="language-markup">&lt;ul class="tabs"&gt;
-	&lt;li class="active"&gt;&lt;a data-target="#tab1" href="#"&gt;Superheroes&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a data-target="#tab2" href="#"&gt;Ice Cream&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a data-target="#tab3" href="#"&gt;Seasons&lt;/a&gt;&lt;/li&gt;
+	&lt;li class="active"&gt;&lt;a data-tab data-target="#tab1" href="#"&gt;Superheroes&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a data-tab data-target="#tab2" href="#"&gt;Ice Cream&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a data-tab data-target="#tab3" href="#"&gt;Seasons&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;div class="tabs-content"&gt;
@@ -172,7 +174,7 @@
 <pre><code class="language-markup">&lt;!-- Feature Test --&gt;
 &lt;script&gt;
 	if ( 'querySelector' in document && 'addEventListener' in window && Array.prototype.forEach ) {
-		document.documentElement.className += 'js';
+		document.documentElement.className += ' js';
 	}
 &lt;/script&gt;</code></pre>
 
@@ -219,7 +221,7 @@
 			<div class="row">
 				<div class="grid-two-thirds float-center">
 
-					<h1>Browser Compatability</h1>
+					<h1>Browser Compatibility</h1>
 
 					<p>Tabby works in all modern browsers, and IE 9 and above.</p>
 
