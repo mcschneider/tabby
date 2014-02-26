@@ -1,6 +1,6 @@
 /* =============================================================
 
-	Kraken v3.4
+	Kraken v3.0
 	A lightweight front-end boilerplate by Chris Ferdinandi.
 	http://gomakethings.com
 
@@ -34,7 +34,7 @@
 	CSS RESET
 	Meyer's CSS Reset, Normalized.css, and custom code.
  * ============================================================= */
-/* Mobile Screen Resizing */
+/*  Mobile Screen Resizing */
 @-webkit-viewport {
   width: device-width;
   zoom: 1.0;
@@ -60,7 +60,7 @@
   zoom: 1.0;
 }
 
-/* Remove browser defaults */
+/*  Remove browser defaults */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -81,16 +81,6 @@ time, mark, audio, video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-}
-
-/* Add box sizing to everything
- * http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
-*,
-*:before,
-*:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
 }
 
 /*  Set display type for HTML5 semantic elements */
@@ -170,7 +160,7 @@ a:active {
 /*  Mobile-first. Single-column layout by default
  *  Container sets the maximum page width. Adjust as needed. */
 .container {
-  max-width: 80em;
+  max-width: 60em;
   width: 88%;
   margin-left: auto;
   margin-right: auto;
@@ -181,8 +171,8 @@ a:active {
  *  Two-column layout for .grid-img. */
 @media (min-width: 20em) {
   .row {
-    margin-left: -1.4%;
-    margin-right: -1.4%;
+    margin-left: -1.515151515152%;
+    margin-right: -1.515151515152%;
   }
 
   .grid-fourth,
@@ -193,9 +183,9 @@ a:active {
   .grid-full,
   .grid-img {
     float: left;
-    width: 100%;
-    padding-left: 1.4%;
-    padding-right: 1.4%;
+    width: 96.969696969697%;
+    margin-left: 1.515151515152%;
+    margin-right: 1.515151515152%;
   }
 
   /*  Reverses order of grid for content choreography */
@@ -205,24 +195,28 @@ a:active {
 
   /*  Optionally show grid for small screens */
   .row-start-xsmall .grid-fourth {
-    width: 25%;
+    width: 21.96969696969%;
   }
 
   .row-start-xsmall .grid-third {
-    width: 33.33333333333%;
+    width: 30.30303030303%;
   }
 
   .row-start-xsmall .grid-half,
   .grid-img {
-    width: 50%;
+    width: 46.969696969697%;
   }
 
   .row-start-xsmall .grid-two-thirds {
-    width: 66.666666666667%;
+    width: 63.636363636364%;
   }
 
   .row-start-xsmall .grid-three-fourths {
-    width: 75%;
+    width: 71.969696969697%;
+  }
+
+  .row-start-xsmall .grid-full {
+    width: 96.969696969697%;
   }
 }
 /*  Still mostly single-column.
@@ -231,24 +225,28 @@ a:active {
 @media (min-width: 30em) {
   /*  Show grid for small screens */
   .row-start-small .grid-fourth {
-    width: 25%;
+    width: 21.96969696969%;
   }
 
   .row-start-small .grid-third,
   .grid-img {
-    width: 33.33333333333%;
+    width: 30.30303030303%;
   }
 
   .row-start-small .grid-half {
-    width: 50%;
+    width: 46.969696969697%;
   }
 
   .row-start-small .grid-two-thirds {
-    width: 66.666666666667%;
+    width: 63.636363636364%;
   }
 
   .row-start-small .grid-three-fourths {
-    width: 75%;
+    width: 71.969696969697%;
+  }
+
+  .row-start-small .grid-full {
+    width: 96.969696969697%;
   }
 }
 /*  Full 6-column grid.
@@ -256,45 +254,53 @@ a:active {
 @media (min-width: 40em) {
   .grid-fourth,
   .grid-img {
-    width: 25%;
+    width: 21.96969696969%;
   }
 
   .grid-third {
-    width: 33.33333333333%;
+    width: 30.30303030303%;
   }
 
   .grid-half {
-    width: 50%;
+    width: 46.969696969697%;
   }
 
   .grid-two-thirds {
-    width: 66.666666666667%;
+    width: 63.636363636364%;
   }
 
   .grid-three-fourths {
-    width: 75%;
+    width: 71.969696969697%;
+  }
+
+  .grid-full {
+    width: 96.969696969697%;
   }
 
   /*  Offets let you shift grid elements to the right
    *  but stay aligned to the grid. */
   .offset-fourth {
-    margin-left: 25%;
+    margin-left: 26.484848484848%;
   }
 
   .offset-third {
-    margin-left: 33.33333333333%;
+    margin-left: 34.848484848485%;
   }
 
   .offset-half {
-    margin-left: 50%;
+    margin-left: 51.515151515152%;
   }
 
   .offset-two-thirds {
-    margin-left: 66.666666666667%;
+    margin-left: 68.181818181818%;
   }
 
   .offset-three-fourths {
-    margin-left: 75%;
+    margin-left: 76.484848484848%;
+  }
+
+  .offset-5 {
+    margin-left: 84.848484848485%;
   }
 }
 /* Add clearfix */
@@ -363,6 +369,14 @@ a:hover {
   text-decoration: underline;
 }
 
+a.current,
+a.current:hover {
+  pointer-events: none;
+  cursor: not-allowed;
+  color: gray;
+  text-decoration: none;
+}
+
 a img {
   border: none;
   background: none;
@@ -426,7 +440,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
   margin-bottom: 1em;
   padding-top: 1em;
-  word-wrap: break-word;
+  text-align: center;
 }
 
 h1,
@@ -571,6 +585,67 @@ pre code {
 }
 
 /* =============================================================
+	PRISM.JS
+	Code syntax highlighting by Lea Verou.
+	http://prismjs.com/
+ * ============================================================= */
+@media screen {
+  pre .token.comment,
+  pre .token.prolog,
+  pre .token.doctype,
+  pre .token.cdata {
+    color: slategray;
+  }
+
+  pre .token.punctuation {
+    color: #999;
+  }
+
+  pre .token.property,
+  pre .token.tag,
+  pre .token.boolean,
+  pre .token.number,
+  pre .token.constant,
+  pre .token.symbol {
+    color: #905;
+  }
+
+  pre .token.selector,
+  pre .token.attr-name,
+  pre .token.string,
+  pre .token.builtin {
+    color: #690;
+  }
+
+  pre .token.operator,
+  pre .token.entity,
+  pre .token.url,
+  pre .language-css .token.string,
+  pre .style .token.string,
+  pre .token.variable {
+    color: #a67f59;
+  }
+
+  pre .token.atrule,
+  pre .token.attr-value,
+  pre .token.keyword {
+    color: #07a;
+  }
+
+  pre .token.regex,
+  pre .token.important {
+    color: #e90;
+  }
+
+  pre .token.important {
+    font-weight: bold;
+  }
+
+  pre .token.entity {
+    cursor: help;
+  }
+}
+/* =============================================================
 	BUTTONS
 	Styling for CSS buttons.
  * ============================================================= */
@@ -650,6 +725,9 @@ input[type="button"].btn-block {
   margin-right: 0;
   padding-right: 0;
   padding-left: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 button,
@@ -657,8 +735,6 @@ button,
   cursor: pointer;
   text-align: center;
   vertical-align: middle;
-  /* Override default Webkit/Firefox button styling */
-  background-image: none;
   -webkit-appearance: none;
 }
 
@@ -698,6 +774,9 @@ select {
   padding: 0.3125em;
   border: 0.0725em solid #b8b8b8;
   border-radius: 0.0725em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 form button,
@@ -755,21 +834,21 @@ select:focus {
   }
 }
 /* =============================================================
-  ICONS
-  A placeholder for icon fonts.
-  Learn more at http://gomakethings.com/icon-fonts/
+	ICONS
+	A placeholder for icon fonts.
+	Learn more at http://gomakethings.com/icon-fonts/
  * ============================================================= */
- /*  Change font names and URLs as need. */
- @font-face {
-   font-family: "icomoon";
-   font-weight: normal;
-   font-style: normal;
-   src: url("../fonts/icomoon.eot");
-   src: url("../fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("../fonts/icomoon.woff") format("woff"), url("../fonts/icomoon.ttf") format("truetype"), url("../fonts/icomoon.svg#icomoon") format("svg");
- }
+/*  Change font names and URLs as need. */
+@font-face {
+  font-family: "icomoon";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/icomoon.eot");
+  src: url("../fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("../fonts/icomoon.woff") format("woff"), url("../fonts/icomoon.ttf") format("truetype"), url("../fonts/icomoon.svg#icomoon") format("svg");
+}
 
- [class^="icon-"]:before,
- [class*=" icon-"]:before {
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
   font-family: 'icomoon';
   font-style: normal;
   speak: none;
@@ -778,21 +857,96 @@ select:focus {
   text-rendering: optimizeLegibility;
 }
 
-.js-font-face .icon-github:before {
-  content: "\e600";
+.icon-logo:before {
+  content: "\e000";
 }
-.js-font-face .icon-logo:before {
-  content: "\e603";
+
+.icon-github:before {
+  content: "\e001";
+}
+
+.icon-docs:before {
+  content: "\e002";
+}
+
+.icon-reset:before {
+  content: "\e003";
+}
+
+.icon-grid:before {
+  content: "\e004";
+}
+
+.icon-typography:before {
+  content: "\e005";
+}
+
+.icon-buttons:before {
+  content: "\e006";
+}
+
+.icon-forms:before {
+  content: "\e007";
+}
+
+.icon-addons:before {
+  content: "\e008";
 }
 
 /* =============================================================
 
-  Backgrounds v2.0
-  Simple section dividers by Chris Ferdinandi.
-  http://gomakethings.com
+	Tables v2.0
+	Simple table styling by Chris Ferdinandi.
+	http://gomakethings.com
 
-  Free to use under the MIT License.
-  http://gomakethings.com/mit/
+	Free to use under the MIT License.
+	http://gomakethings.com/mit/
+
+ * ============================================================= */
+/*  Removes default browser settings
+ *  and evens out inconsistencies. */
+table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1.5625em;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.5em;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  vertical-align: bottom;
+}
+
+td {
+  border-top: 0.0725em solid #ededed;
+  vertical-align: top;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f7f7f7;
+}
+
+.table-condensed th,
+.table-condensed td {
+  padding: 0.25em;
+}
+
+/* =============================================================
+
+	Backgrounds v2.0
+	Simple section dividers by Chris Ferdinandi.
+	http://gomakethings.com
+
+	Free to use under the MIT License.
+	http://gomakethings.com/mit/
 
  * ============================================================= */
 .bg {
@@ -809,6 +963,158 @@ select:focus {
 .bg-condensed {
   padding-top: 0.9375em;
   padding-bottom: 0.9375em;
+}
+
+/* =============================================================
+
+	Hero v3.0
+	Simple callout boxes and background colors by Chris Ferdinandi.
+	http://gomakethings.com
+
+	Free to use under the MIT License.
+	http://gomakethings.com/mit/
+
+ * ============================================================= */
+.hero {
+  background-color: #f7f7f7;
+  margin-bottom: 1.5625em;
+  padding: 1.5em;
+  border: 0.0725em solid #e5e5e5;
+  border-radius: 0.0725em;
+}
+
+.hero-condensed {
+  padding: 0.9375em;
+}
+
+/* =============================================================
+
+	Labels v1.0
+	Lightweight CSS labels by Chris Ferdinandi.
+	http://gomakethings.com
+
+	Free to use under the MIT License.
+	http://gomakethings.com/mit/
+
+ * ============================================================= */
+.label {
+  font-size: 0.8125em;
+  color: white;
+  background-color: #0088cc;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  border-radius: 0.0725em;
+}
+
+.label-success {
+  background-color: #377f31;
+}
+
+.label-danger {
+  background-color: #880e14;
+}
+
+.label-warning {
+  background-color: #dba909;
+}
+
+/* =============================================================
+
+	Tables v2.0
+	Simple table styling by Chris Ferdinandi.
+	http://gomakethings.com
+
+	Free to use under the MIT License.
+	http://gomakethings.com/mit/
+
+ * ============================================================= */
+/*  Removes default browser settings
+ *  and evens out inconsistencies. */
+table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1.5625em;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.5em;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  vertical-align: bottom;
+}
+
+td {
+  border-top: 0.0725em solid #ededed;
+  vertical-align: top;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f7f7f7;
+}
+
+.table-condensed th,
+.table-condensed td {
+  padding: 0.25em;
+}
+
+/* =============================================================
+
+	Tabby 4.1
+	Simple, mobile-first toggle tabs by Chris Ferdinandi.
+	http://gomakethings.com
+
+	Free to use under the MIT License.
+	http://gomakethings.com/mit/
+
+ * ============================================================= */
+/*  Hide tab navigation by default */
+.tabs {
+  display: none;
+  visibility: hidden;
+}
+
+/*  Display tab navigation if javascript enabled.
+ *  This requires on the included js-accessibility.js-tabby script. */
+.js-tabby .tabs {
+  display: block;
+  visibility: visible;
+}
+
+/*  Force browser to show a pointer on tab navigation. */
+.tabs a,
+.tabs button {
+  cursor: pointer;
+}
+
+/*  Hide tab content if javascript is enabled. */
+.js-tabby .tabs-pane {
+  display: none;
+  visibility: hidden;
+}
+
+/*  Show tab content when active class is added.
+ *  This class is added via javascript. */
+.tabs-pane.active {
+  display: block;
+  visibility: visible;
+}
+
+/* Clearfix */
+.tabs:before,
+.tabs:after {
+  display: table;
+  content: "";
+}
+
+.tabs:after {
+  clear: both;
 }
 
 /* =============================================================
